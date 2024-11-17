@@ -1,6 +1,38 @@
 ---
-
+import '@fontsource-variable/honk/full.css';
+import '../styles/global.css';
 ---
+<style is:global>
+@font-palette-values --colorTitle {
+  font-family: 'Honk Variable';
+  override-colors:
+    0 black,
+    1 black,
+    2 #FF7D8B,   /* Felle, warme roze tint */
+    3 #F66C9A,   /* Donkerder roze, een stap intenser */
+    4 #F48BB1,   /* Iets lichter dan de vorige, maar nog steeds fel roze */
+    5 #D186E8,   /* Lichte, frisse lavendelpaars */
+    6 #9A64D9,   /* Medium paarse tint met wat diepte */
+    7 #7A4EC3;   /* Donkere paarse tint die het afsluit */
+}
+
+body {
+	background-color: #FDEDEC;
+	display: flex;
+	justify-content: center;
+}
+.home__title {
+	font-family: 'Honk Variable';
+	font-palette: --colorTitle;
+	font-size: 7rem;
+	text-transform: uppercase;
+	line-height: 1;
+	font-variation-settings: "MORF" 15, "SHLN" 0;
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	letter-spacing: -.6em;
+}
+</style>
 
 <html lang="en">
 	<head>
@@ -11,6 +43,6 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1 class="home__title">Josee Wouters</h1>
 	</body>
 </html>
