@@ -18,20 +18,43 @@ import '../styles/global.css';
 
 body {
 	background-color: #FDEDEC;
+}
+
+.main {
 	display: flex;
 	justify-content: center;
+	height: 35rem;
+	container-type: size;
 }
+
 .home__title {
 	font-family: 'Honk Variable';
 	font-palette: --colorTitle;
-	font-size: 7rem;
-	text-transform: uppercase;
-	line-height: 1;
-	font-variation-settings: "MORF" 15, "SHLN" 0;
-	writing-mode: vertical-lr;
-	text-orientation: upright;
-	letter-spacing: -.6em;
 }
+
+@container (orientation: portrait) {
+	.home__title {
+		font-size: 7rem;
+		text-transform: uppercase;
+		line-height: 1;
+		font-variation-settings: "MORF" 15, "SHLN" 0;
+		writing-mode: vertical-lr;
+		text-orientation: upright;
+		letter-spacing: -.6em;
+	}
+
+}
+
+@container (orientation: landscape) {
+	.home__title {
+		font-size: 16rem;
+		line-height: .8;
+		font-variation-settings: "MORF" 15, "SHLN" 45;
+		margin-top: auto;
+		margin-left: 6rem;
+	}
+}
+
 </style>
 
 <html lang="en">
@@ -43,6 +66,8 @@ body {
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1 class="home__title">Josee Wouters</h1>
+		<main class="main">
+			<h1 class="home__title">Josee<br/> Wouters</h1>
+		</main>
 	</body>
 </html>
